@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>사용처별 구리스 양 확인하기</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>사용처별 구리스 양 확인하기</h1>
+  </header>
+  <main>
+    <!-- 사용처 선택 버튼 -->
+    <div class="usage-container">
+      <button id="usageBtn" class="usage-btn">사용처 선택</button>
+      <div id="usageDropdown" class="dropdown-content">
+        <button class="dropdown-item" data-value="">전체</button>
+      </div>
+    </div>
+    <!-- 데이터 테이블 -->
+    <table>
+      <thead>
+        <tr>
+          <th>사용처</th>
+          <th>구리스 양</th>
+          <th>펌프 횟수</th>
+        </tr>
+      </thead>
+      <tbody id="greaseTable">
+        <!-- 데이터는 사용처 선택 시 JavaScript로 로드됩니다 -->
+      </tbody>
+    </table>
+    <!-- 로딩 이미지 (초기에는 숨김) -->
+    <div id="loadingImage" style="display: none;">
+      <img src="https://store.img11.co.kr/71175441/5f39b55d-d16e-4389-ad6c-b80bae50da78_1741174744649.jpg" alt="1119392-1-1.jpg" />
+    </div>
+    <!-- 검색결과보기 버튼 -->
+    <div id="searchResultBtn" class="search-result-btn" style="display: none;">
+      독일 명품 구리스건 검색결과보기
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
