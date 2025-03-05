@@ -1,0 +1,194 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body 스타일 */
+body {
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #2d3748;
+  padding: 2vw;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* 헤더 */
+header {
+  text-align: center;
+  margin-bottom: 2vh;
+}
+
+h1 {
+  font-size: 4.5vw;
+  font-weight: 600;
+  color: #1a202c;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* 사용처 선택 버튼 및 드롭다운 */
+.usage-container {
+  position: relative;
+  text-align: center;
+  margin-bottom: 2vh;
+}
+
+.usage-btn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 1.5vh 3vw;
+  font-size: 2.5vw;
+  border-radius: 2vh;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.usage-btn:hover {
+  background-color: #357abd;
+  transform: translateY(-1px);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  min-width: 50vw;
+  max-height: 40vh;
+  overflow-y: auto;
+  border-radius: 1.5vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: 1vh 2vw;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 2vw;
+  color: #2d3748;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #edf2f7;
+}
+
+/* 테이블 스타일 */
+table {
+  width: 96vw;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: transparent;
+}
+
+thead {
+  background-color: #2d3748;
+  color: #fff;
+  border-radius: 1vh;
+}
+
+th {
+  padding: 1.5vh 2vw;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 2.2vw;
+}
+
+tbody tr {
+  background-color: #fff;
+  border-radius: 1vh;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+tbody tr:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+td {
+  padding: 1.5vh 2vw;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  font-size: 2vw;
+}
+
+/* 로딩 이미지 스타일 */
+#loadingImage {
+  text-align: center;
+  margin: 2vh 0;
+}
+
+#loadingImage img {
+  max-width: 90vw; /* 화면 너비에 맞게 조정 */
+  height: auto;
+}
+
+/* 검색결과보기 버튼 스타일 */
+.search-result-btn {
+  text-align: center;
+  margin-top: 2vh;
+  padding: 1vh 2vw;
+  font-size: 2vw;
+  color: red;
+  background-color: #d3d3d3;
+  border: none;
+  border-radius: 1vh;
+  cursor: pointer;
+  animation: blink 0.25s infinite; /* 1초에 4번 깜빡임 (0.25s 간격) */
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* 모바일 최적화 */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 4vw;
+  }
+  .usage-btn {
+    padding: 1vh 2.5vw;
+    font-size: 2.2vw;
+  }
+  .dropdown-content {
+    min-width: 60vw;
+    max-height: 35vh;
+  }
+  .dropdown-item {
+    padding: 0.8vh 2vw;
+    font-size: 1.8vw;
+  }
+  th, td {
+    padding: 1.2vh 1.5vw;
+    font-size: 1.8vw;
+  }
+  table {
+    width: 98vw;
+    overflow-x: auto;
+  }
+  tbody tr {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  #loadingImage img {
+    max-width: 95vw;
+  }
+  .search-result-btn {
+    padding: 0.8vh 2vw;
+    font-size: 1.8vw;
+  }
+}
