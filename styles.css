@@ -1,56 +1,55 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* Body 스타일 */
 body {
-  font-family: 'Segoe UI', 'Arial', sans-serif;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   color: #2d3748;
-  padding: 2vw;
-  min-height: 100vh;
-  width: 100vw;
+  padding: 5px;
+  min-height: 700px; /* 높이 700px */
+  max-height: 700px; /* 높이 제한 */
+  width: 100%;
+  max-width: 400px; /* 너비 400px */
+  margin: 0 auto; /* 중앙 정렬 */
   overflow-x: hidden;
+  overflow-y: auto; /* 스크롤 가능 */
 }
 
-/* 헤더 */
 header {
   text-align: center;
-  margin-bottom: 2vh;
+  padding: 5px 0;
 }
 
 h1 {
-  font-size: 4.5vw;
+  font-size: 20px; /* 고정 크기, 400px 기준 조정 */
   font-weight: 600;
   color: #1a202c;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-/* 사용처 선택 버튼 및 드롭다운 */
 .usage-container {
-  position: relative;
   text-align: center;
-  margin-bottom: 2vh;
+  margin-bottom: 10px;
 }
 
 .usage-btn {
   background-color: #4a90e2;
   color: white;
   border: none;
-  padding: 1.5vh 3vw;
-  font-size: 2.5vw;
-  border-radius: 2vh;
+  padding: 10px 15px;
+  font-size: 16px; /* 고정 크기, 터치 가능 보장 */
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 120px; /* 터치 가능 최소 크기 */
 }
 
 .usage-btn:hover {
   background-color: #357abd;
-  transform: translateY(-1px);
 }
 
 .dropdown-content {
@@ -60,21 +59,23 @@ h1 {
   left: 50%;
   transform: translateX(-50%);
   background-color: #fff;
-  min-width: 50vw;
-  max-height: 40vh;
+  min-width: 80%;
+  max-width: 90%;
+  max-height: 150px; /* 드롭다운 높이 조정 */
   overflow-y: auto;
-  border-radius: 1.5vh;
+  border-radius: 6px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   z-index: 1;
+  padding: 5px 0;
 }
 
 .dropdown-item {
   width: 100%;
-  padding: 1vh 2vw;
+  padding: 8px 10px;
   background: none;
   border: none;
   text-align: left;
-  font-size: 2vw;
+  font-size: 14px; /* 고정 크기, 가독성 유지 */
   color: #2d3748;
   cursor: pointer;
   transition: background-color 0.2s;
@@ -84,10 +85,15 @@ h1 {
   background-color: #edf2f7;
 }
 
-/* 테이블 스타일 */
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 10px;
+  max-width: 100%;
+}
+
 table {
-  width: 96vw;
-  margin: 0 auto;
+  width: 100%;
+  min-width: 300px;
   border-collapse: collapse;
   background-color: transparent;
 }
@@ -95,100 +101,110 @@ table {
 thead {
   background-color: #2d3748;
   color: #fff;
-  border-radius: 1vh;
 }
 
 th {
-  padding: 1.5vh 2vw;
+  padding: 6px 8px;
   font-weight: 600;
   text-align: center;
-  border-bottom: 1px solid #ddd;
-  font-size: 2.2vw;
+  font-size: 14px; /* 고정 크기 */
 }
 
 tbody tr {
   background-color: #fff;
-  border-radius: 1vh;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: background-color 0.2s;
 }
 
 tbody tr:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f0f0f0;
 }
 
 td {
-  padding: 1.5vh 2vw;
+  padding: 6px 8px;
   text-align: center;
-  border-bottom: 1px solid #eee;
-  font-size: 2vw;
+  font-size: 12px; /* 고정 크기, 400px에 맞춤 */
 }
 
-/* 로딩 이미지 스타일 */
-#loadingImage {
+.loading-image {
   text-align: center;
-  margin: 2vh 0;
+  margin: 10px 0;
 }
 
-#loadingImage img {
-  max-width: 90vw; /* 화면 너비에 맞게 조정 */
+.loading-image img {
+  max-width: 100%;
   height: auto;
 }
 
-/* 검색결과보기 버튼 스타일 */
 .search-result-btn {
-  text-align: center;
-  margin-top: 2vh;
-  padding: 1vh 2vw;
-  font-size: 2vw;
+  display: block;
+  margin: 10px auto;
+  padding: 10px 15px;
+  font-size: 14px; /* 고정 크기 */
   color: red;
   background-color: #d3d3d3;
   border: none;
-  border-radius: 1vh;
+  border-radius: 6px;
   cursor: pointer;
-  animation: blink 0.25s infinite; /* 1초에 4번 깜빡임 (0.25s 간격) */
+  width: 90%;
+  animation: blink 0.5s infinite;
 }
 
 @keyframes blink {
   50% {
-    opacity: 0;
+    opacity: 0.3;
   }
 }
 
-/* 모바일 최적화 */
+/* 모바일 반응형 (600px 이하) */
 @media (max-width: 600px) {
+  body {
+    max-width: 100%; /* 핸드폰 화면에 맞게 조정 */
+    padding: 5px;
+  }
   h1 {
-    font-size: 4vw;
+    font-size: 18px;
   }
   .usage-btn {
-    padding: 1vh 2.5vw;
-    font-size: 2.2vw;
+    font-size: 14px;
+    padding: 8px 12px;
   }
   .dropdown-content {
-    min-width: 60vw;
-    max-height: 35vh;
+    min-width: 85%;
+    max-height: 120px;
   }
   .dropdown-item {
-    padding: 0.8vh 2vw;
-    font-size: 1.8vw;
+    font-size: 12px;
+    padding: 6px 8px;
   }
-  th, td {
-    padding: 1.2vh 1.5vw;
-    font-size: 1.8vw;
+  th {
+    font-size: 12px;
+    padding: 5px 6px;
   }
-  table {
-    width: 98vw;
-    overflow-x: auto;
-  }
-  tbody tr {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  }
-  #loadingImage img {
-    max-width: 95vw;
+  td {
+    font-size: 10px;
+    padding: 5px 6px;
   }
   .search-result-btn {
-    padding: 0.8vh 2vw;
-    font-size: 1.8vw;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+
+/* 추가 최적화 (480px 이하) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 16px;
+  }
+  .usage-btn {
+    font-size: 12px;
+  }
+  .dropdown-item {
+    font-size: 10px;
+  }
+  th, td {
+    font-size: 10px;
+  }
+  .search-result-btn {
+    font-size: 12px;
   }
 }
